@@ -2,9 +2,9 @@ namespace rock_paper_scissorss
 {
     public partial class Form1 : Form
     {
-        string sidea = "";
+        string sidea = "";// two strings which show what the side A and B have chosen
         string sideb = "";
-        void es()
+        void es()// two functions which don't let the users choose another option.
         {
             button6.Enabled = false;
             button5.Enabled = false;
@@ -23,8 +23,8 @@ namespace rock_paper_scissorss
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sidea = "rock";
-            x();
+            sidea = "rock"; // the side becomes what they click, the button they click basically
+            x(); // then it greys out the rest of the buttons
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,15 +62,15 @@ namespace rock_paper_scissorss
 
         private void label1_Click(object sender, EventArgs e)
         {
-            string[] s = {"rock","paper","scissors" };
+            string[] s = {"rock","paper","scissors" }; // here my solution to figuring out who won is to make two arrays which when compared in terms of indexes, the x array beats out the s array
             string[] x = {"paper","scissors","rock" };
-            int sidai = Array.IndexOf(s, sidea);
-            int sidbit = Array.IndexOf(x, sideb);
+            int sidai = Array.IndexOf(s, sidea); // so i made 4 different integers which check the positions of whatever the user chosoe
+            int sidbit = Array.IndexOf(x, sideb);// sideai is where SIDE A is in array S. sidbit is where SIDE B is in array X. if sideai == sidbit which means that side B wins because since the X array is made to beat out the B array.
             int sidebi = Array.IndexOf(s, sideb);
             int sidait = Array.IndexOf(x, sidea);
 
-            if (sidai == sidbit) { label1.Text = "side a wins"; }
-            else if(sidebi==sidait) { label1.Text = "side  b wins"; } 
+            if (sidai == sidbit) { label1.Text = "side b wins"; }
+            else if(sidebi==sidait) { label1.Text = "side  a wins"; } 
             else if(sidebi==sidai) { label1.Text = "draw"; }
 
             }
